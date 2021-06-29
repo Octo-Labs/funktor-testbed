@@ -1,3 +1,4 @@
+FUNKTOR_APP_NAME: funktor-testbed
 FUNKTOR_INCOMING_JOB_QUEUE:
   Ref: IncomingJobQueue
 FUNKTOR_DEFAULT_QUEUE:
