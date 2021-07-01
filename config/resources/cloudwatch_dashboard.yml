@@ -466,12 +466,35 @@ Resources:
                         "title": "Job Duration by Worker"
                     }
                 },
+
+                
+                { 
+                    "height": 6,
+                    "width": 24,
+                    "y": 33,
+                    "x": 0,
+                    "type": "metric",
+                    "properties": {
+                        "metrics": [
+                            [ "funktor-testbed", "processed", "WorkerClassName", "GreetingsWorker" ],
+                            [ ".", "failed", ".", "." ],
+                            [ "funktor-testbed", "processed", "WorkerClassName", "HelloWorker" ],
+                            [ ".", "failed", ".", "." ]
+                        ],
+                        "view": "timeSeries",
+                        "stacked": false,
+                        "region": "us-east-1",
+                        "title": "Process/Failed Jobs By Worker",
+                        "period": 60,
+                        "stat": "Sum"
+                  }
+                },
                 
 
                 { 
                     "height": 3,
                     "width": 6,
-                    "y": 33,
+                    "y": 39,
                     "x": 0,
                     "type": "text",
                     "properties": {
@@ -481,7 +504,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 3,
-                    "y": 33,
+                    "y": 39,
                     "x": 6,
                     "type": "metric",
                     "properties": {
@@ -498,7 +521,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 15,
-                    "y": 33,
+                    "y": 39,
                     "x": 9,
                     "type": "metric",
                     "properties": {
@@ -522,7 +545,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 6,
-                    "y": 36,
+                    "y": 42,
                     "x": 18,
                     "type": "metric",
                     "properties": {
@@ -547,7 +570,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 9,
-                    "y": 36,
+                    "y": 42,
                     "x": 9,
                     "type": "metric",
                     "properties": {
@@ -567,7 +590,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 9,
-                    "y": 36,
+                    "y": 42,
                     "x": 0,
                     "type": "metric",
                     "properties": {
@@ -589,7 +612,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 9,
-                    "y": 39,
+                    "y": 45,
                     "x": 0,
                     "type": "metric",
                     "properties": {
@@ -611,7 +634,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 6,
-                    "y": 39,
+                    "y": 45,
                     "x": 18,
                     "type": "metric",
                     "properties": {
@@ -629,7 +652,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 9,
-                    "y": 39,
+                    "y": 45,
                     "x": 9,
                     "type": "metric",
                     "properties": {
@@ -655,7 +678,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 18,
-                    "y": 42,
+                    "y": 48,
                     "x": 0,
                     "type": "metric",
                     "properties": {
@@ -678,7 +701,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 6,
-                    "y": 42,
+                    "y": 48,
                     "x": 18,
                     "type": "metric",
                     "properties": {
@@ -695,6 +718,9 @@ Resources:
                         "liveData": true
                     }
                 }
+
+
+                
 
             ]
         }
