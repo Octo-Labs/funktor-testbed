@@ -41,9 +41,9 @@ serverless deploy
 
 Assuming everything goes smoothly you should now have a stack provisioned in CloudFormation and you
 should see a `funktor-testbed-dev-dashboard` in your
-(CloudWatch Dashbaords list)[https://console.aws.amazon.com/cloudwatch/home#dashboards:].
+[CloudWatch Dashbaords list](https://console.aws.amazon.com/cloudwatch/home#dashboards:).
 
-!(Funktor Testbed Dashboard)[images/funktor-testbed-dashboard.png]
+![Funktor Testbed Dashboard](./images/funktor-testbed-dashboard.png)
 
 You'll notice that there is no activity happening on your dashboard yet. To help reduce the chances
 for unexpected expenses this project is setup so that you must manually start random jobs generating.
@@ -77,7 +77,7 @@ sls deploy
 
 Then you should start seeing some activity in your dashboard.
 
-!(Funktor Testbed Dashboard)[images/funktor-testbed-dashboard-with-activity.png]
+![Funktor Testbed Dashboard](./images/funktor-testbed-dashboard-with-activity.png)
 
 Ther are a number of other options in that file, which are documented there, that you can use to
 affect the rate of new jobs coming in, how long they take to execute, and how many of them will throw
