@@ -96,11 +96,14 @@ reservedConcurrency: 0
 # snip ...
 ```
 
-After making that change, and saving the file, you can deploy again to start the action.
+After making that change, and saving the file, you can deploy again to stop the action.
 
 ```
 sls deploy
 ```
+
+A little while later you should see activity start to trail off, and then stop completely
+after a while (15 minutes by default, which is controlled by `MAX_JOB_DELAY_IN_SECONDS`).
 
 
 
