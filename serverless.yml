@@ -30,7 +30,6 @@ provider:
     - ${file(config/iam_permissions/default_queue.yml)}
     - ${file(config/iam_permissions/incoming_job_queue.yml)}
     - ${file(config/iam_permissions/ssm.yml)}
-    - ${file(config/iam_permissions/single_thread_queue.yml)}
 
 
 custom:
@@ -45,7 +44,6 @@ package: ${file(config/package.yml)}
 functions:
   IncomingJobHandler: ${file(config/function_definitions/incoming_job_handler.yml)}
   DefaultQueueHandler: ${file(config/function_definitions/default_queue_handler.yml)}
-  SingleThreadQueueHandler: ${file(config/function_definitions/single_thread_queue_handler.yml)}
   RandomJobGenerator: ${file(config/function_definitions/random_job_generator.yml)}
 
 resources:
@@ -53,7 +51,6 @@ resources:
   - ${file(config/resources/cloudwatch_dashboard.yml)}
   - ${file(config/resources/default_queue.yml)}
   - ${file(config/resources/incoming_job_queue.yml)}
-  - ${file(config/resources/single_thread_queue.yml)}
 
 plugins:
   - serverless-ruby-layer

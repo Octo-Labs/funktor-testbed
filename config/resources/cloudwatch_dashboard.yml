@@ -297,158 +297,11 @@ Resources:
                 },
 
                 
-                { 
-                    "height": 3,
-                    "width": 6,
-                    "y": 18,
-                    "x": 0,
-                    "type": "text",
-                    "properties": {
-                        "markdown": "\n# SingleThread Queue\n"
-                    }
-                },
-                { 
-                    "height": 3,
-                    "width": 3,
-                    "y": 18,
-                    "x": 6,
-                    "type": "metric",
-                    "properties": {
-                        "metrics": [
-                            [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName",
-                              "${self:custom.funktor.SingleThreadQueueName}", { "label": "Messages Per Minute" } ]
-                        ],
-                        "view": "singleValue",
-                        "region": "us-east-1",
-                        "stat": "Sum",
-                        "period": 60,
-                        "title": "Messages Per Minute"
-                    }
-                },
-                { 
-                    "height": 3,
-                    "width": 15,
-                    "y": 18,
-                    "x": 9,
-                    "type": "metric",
-                    "properties": {
-                        "metrics": [
-                            [ "AWS/Lambda", "Duration", "FunctionName",
-                              "${self:custom.funktor.SingleThreadQueueHandlerName}", "Resource",
-                              "${self:custom.funktor.SingleThreadQueueHandlerName}", { "label": "p10" } ],
-                            [ "...", { "label": "p50", "stat": "p50" } ],
-                            [ "...", { "label": "p99", "stat": "p99" } ],
-                            [ "...", { "label": "Average", "stat": "Average" } ]
-                        ],
-                        "view": "singleValue",
-                        "region": "us-east-1",
-                        "stat": "p10",
-                        "period": 60,
-                        "title": "Handler Duration"
-                    }
-                },
-                { 
-                    "height": 6,
-                    "width": 9,
-                    "y": 21,
-                    "x": 0,
-                    "type": "metric",
-                    "properties": {
-                        "metrics": [
-                            [ "AWS/SQS", "NumberOfMessagesReceived", "QueueName",
-                              "${self:custom.funktor.SingleThreadQueueName}",
-                              { "label": "Received" } ],
-                            [ ".", "NumberOfMessagesDeleted", ".", ".", { "label": "Handled" } ],
-                            [ "AWS/Lambda", "Invocations", "FunctionName",
-                              "${self:custom.funktor.SingleThreadQueueHandlerName}", "Resource",
-                              "${self:custom.funktor.SingleThreadQueueHandlerName}", { "label": "Handler Invocations" } ],
-                            [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName",
-                              "${self:custom.funktor.SingleThreadQueueName}", { "label": "Pending?" } ],
-                            [ ".", "ApproximateNumberOfMessagesNotVisible", ".", ".", { "label": "Backlog?" } ],
-                            [ ".", "NumberOfMessagesSent", ".", ".", { "label": "Sent" } ],
-                            [ ".", "ApproximateNumberOfMessagesDelayed", ".", ".", { "label": "Delayed" } ]
-                        ],
-                        "view": "timeSeries",
-                        "stacked": false,
-                        "region": "us-east-1",
-                        "title": "SingleThread Queue (Async jobs go here immediately, scheduled jobs land here in the minute before they're scheduled)",
-                        "period": 60,
-                        "stat": "Sum",
-                        "liveData": true
-                    }
-                },
-                { 
-                    "height": 6,
-                    "width": 9,
-                    "y": 21,
-                    "x": 9,
-                    "type": "metric",
-                    "properties": {
-                        "period": 60,
-                        "metrics": [
-                            [ "AWS/Lambda", "Duration", "FunctionName", "${self:custom.funktor.SingleThreadQueueHandlerName}", { "stat": "Minimum" } ],
-                            [ "...", { "stat": "Average" } ],
-                            [ "...", { "stat": "Maximum" } ]
-                        ],
-                        "region": "us-east-1",
-                        "title": "SingleThread Queue Handler Duration in Milliseconds",
-                        "view": "timeSeries",
-                        "stacked": false,
-                        "liveData": true
-                    }
-                },
-                { 
-                    "height": 3,
-                    "width": 6,
-                    "y": 21,
-                    "x": 18,
-                    "type": "metric",
-                    "properties": {
-                        "period": 60,
-                        "metrics": [
-                            [ "AWS/Lambda", "Errors", "FunctionName",
-                              "${self:custom.funktor.SingleThreadQueueHandlerName}", { "id": "errors", "stat": "Sum", "color": "#d13212" } ],
-                            [ ".", "Invocations", ".", ".", { "id": "invocations", "stat": "Sum", "visible": false } ],
-                            [ { "expression": "100 - 100 * errors / MAX([errors, invocations])", "label": "Success rate (%)", "id": "availability", "yAxis": "right", "region": "us-east-1" } ]
-                        ],
-                        "region": "us-east-1",
-                        "title": "SingleThread Queue Handler Error count and success rate (%)",
-                        "yAxis": {
-                            "right": {
-                                "max": 100
-                            }
-                        },
-                        "view": "timeSeries",
-                        "stacked": false,
-                        "liveData": true
-                    }
-                },
-                { 
-                    "height": 3,
-                    "width": 6,
-                    "y": 24,
-                    "x": 18,
-                    "type": "metric",
-                    "properties": {
-                        "period": 60,
-                        "metrics": [
-                            [ "AWS/Lambda", "ConcurrentExecutions", "FunctionName",
-                              "${self:custom.funktor.SingleThreadQueueHandlerName}", { "stat": "Maximum" } ]
-                        ],
-                        "region": "us-east-1",
-                        "title": "SingleThread Queue Handler Concurrent executions",
-                        "view": "timeSeries",
-                        "stacked": false,
-                        "liveData": true
-                    }
-                },
-
-                
 
                 { 
                     "height": 6,
                     "width": 24,
-                    "y": 27,
+                    "y": 18,
                     "x": 0,
                     "type": "metric",
                     "properties": {
@@ -471,7 +324,7 @@ Resources:
                 { 
                     "height": 6,
                     "width": 24,
-                    "y": 33,
+                    "y": 24,
                     "x": 0,
                     "type": "metric",
                     "properties": {
@@ -494,7 +347,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 6,
-                    "y": 39,
+                    "y": 30,
                     "x": 0,
                     "type": "text",
                     "properties": {
@@ -504,7 +357,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 3,
-                    "y": 39,
+                    "y": 30,
                     "x": 6,
                     "type": "metric",
                     "properties": {
@@ -521,7 +374,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 15,
-                    "y": 39,
+                    "y": 30,
                     "x": 9,
                     "type": "metric",
                     "properties": {
@@ -545,7 +398,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 6,
-                    "y": 42,
+                    "y": 33,
                     "x": 18,
                     "type": "metric",
                     "properties": {
@@ -570,7 +423,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 9,
-                    "y": 42,
+                    "y": 33,
                     "x": 9,
                     "type": "metric",
                     "properties": {
@@ -590,7 +443,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 9,
-                    "y": 42,
+                    "y": 33,
                     "x": 0,
                     "type": "metric",
                     "properties": {
@@ -612,7 +465,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 9,
-                    "y": 45,
+                    "y": 36,
                     "x": 0,
                     "type": "metric",
                     "properties": {
@@ -634,7 +487,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 6,
-                    "y": 45,
+                    "y": 36,
                     "x": 18,
                     "type": "metric",
                     "properties": {
@@ -652,7 +505,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 9,
-                    "y": 45,
+                    "y": 36,
                     "x": 9,
                     "type": "metric",
                     "properties": {
@@ -678,7 +531,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 18,
-                    "y": 48,
+                    "y": 39,
                     "x": 0,
                     "type": "metric",
                     "properties": {
@@ -701,7 +554,7 @@ Resources:
                 { 
                     "height": 3,
                     "width": 6,
-                    "y": 48,
+                    "y": 39,
                     "x": 18,
                     "type": "metric",
                     "properties": {

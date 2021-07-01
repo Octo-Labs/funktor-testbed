@@ -3,5 +3,3 @@ FUNKTOR_INCOMING_JOB_QUEUE:
   Ref: IncomingJobQueue
 FUNKTOR_DEFAULT_QUEUE:
   Ref: DefaultQueue
-FUNKTOR_SINGLE_THREAD_QUEUE:
-  Ref: SingleThreadQueue
