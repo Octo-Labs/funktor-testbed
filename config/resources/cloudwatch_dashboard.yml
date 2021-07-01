@@ -453,6 +453,8 @@ Resources:
                     "type": "metric",
                     "properties": {
                         "metrics": [
+                            [ "funktor-testbed", "Duration", "WorkerClassName", "GreetingsWorker" ],
+                            [ "...", { "stat": "p99" } ],
                             [ "funktor-testbed", "Duration", "WorkerClassName", "HelloWorker" ],
                             [ "...", { "stat": "p99" } ]
                         ],
