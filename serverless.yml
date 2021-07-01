@@ -46,6 +46,7 @@ functions:
   IncomingJobHandler: ${file(config/function_definitions/incoming_job_handler.yml)}
   DefaultQueueHandler: ${file(config/function_definitions/default_queue_handler.yml)}
   SingleThreadQueueHandler: ${file(config/function_definitions/single_thread_queue_handler.yml)}
+  RandomJobGenerator: ${file(config/function_definitions/random_job_generator.yml)}
 
 resources:
   - ${file(config/resources/incoming_job_queue_user.yml)}

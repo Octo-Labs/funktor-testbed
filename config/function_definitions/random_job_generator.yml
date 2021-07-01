@@ -1,0 +1,15 @@
+handler: lambda_event_handlers/random_job_generator.RandomJobGenerator.call
+timeout: 58
+reservedConcurrency: 1
+events:
+  - schedule: rate(1 minute)
+environment:
+  # MAX_JOB_DELAY_IN_SECONDS controls the maximum delay that will be put on a randomly generated job.
+  # Maximum possible value is 900 (15 minutes) which is the maximum allowed by SQS.
+  MAX_JOB_DELAY_IN_SECONDS: 300
+  MIN_RANDOM_JOBS_PER_MINUTE: 5
+  MAX_RANDOM_JOBS_PER_MINUTE: 60
+  # MAX_JOB_LENGTH_IN_SECONDS controls how long the slowest job will take to execute (by sleeping)
+  MAX_JOB_LENGTH_IN_SECONDS: 3
+  # ERROR_PERCENTAGE is the percent of requests that should raise an error and be retried.
+  ERROR_PERCENTAGE: 5
