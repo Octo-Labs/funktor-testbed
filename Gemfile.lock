@@ -28,6 +28,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jmespath (1.4.0)
     minitest (5.14.4)
+    require_all (1.5.0)
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -38,6 +39,7 @@ PLATFORMS
 
 DEPENDENCIES
   funktor
+  require_all (~> 1.0)
 
 RUBY VERSION
    ruby 2.7.2p137
