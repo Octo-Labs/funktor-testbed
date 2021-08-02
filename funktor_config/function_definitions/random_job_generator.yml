@@ -1,6 +1,6 @@
 handler: lambda_event_handlers/random_job_generator.RandomJobGenerator.call
 timeout: 58
-reservedConcurrency: 1
+reservedConcurrency: 0
 events:
   - schedule: rate(1 minute)
 environment:
