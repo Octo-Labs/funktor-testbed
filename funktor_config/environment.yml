@@ -1,3 +1,5 @@
+BUNDLE_WITHOUT: development:test
+SERVERLESS_STAGE: ${self:custom.stage}
 FUNKTOR_APP_NAME: funktor-testbed
 FUNKTOR_INCOMING_JOB_QUEUE:
   Ref: IncomingJobQueue
